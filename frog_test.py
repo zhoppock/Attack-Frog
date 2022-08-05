@@ -45,8 +45,8 @@ frog = Frog(90, 140)
 frog_sprites.add(frog)
 
 def main():
-    ambience = pygame.mixer.Sound('./Assets/Sounds/BirdsSporadicFrogs CM020101.mp3')
-    ambience.play() # play a noise when the frog attacks
+    pygame.mixer.music.load('./Assets/Sounds/BirdsSporadicFrogs CM020101.mp3') # loads in some ambience
+    pygame.mixer.music.play(-1) # the -1 tells the program to loop the ambience indefinitely
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: # if you close the window, the program closes down pygame and sys
