@@ -3,8 +3,6 @@ import pygame, sys # import the libraries for pygame and sys at the same time
 pygame.init() # activate pygame usefulness
 clock = pygame.time.Clock() # set up clock for framerate
 
-BLACK = (0, 0, 0) # setting up the RBG values for black
-
 class Frog(pygame.sprite.Sprite): # sprite class for the frog frames
     def __init__(self, x_position, y_position):
         super().__init__()
@@ -12,7 +10,7 @@ class Frog(pygame.sprite.Sprite): # sprite class for the frog frames
         self.is_moving = False
         for frame in range(0, 10):
             load_frame = pygame.image.load('./Assets/Images/attack_' + str(frame + 1) + '.png')
-            self.frog_frames.append(pygame.transform.scale(load_frame, (300, 150)))
+            self.frog_frames.append(pygame.transform.scale(load_frame, (300, 143)))
         self.current_frame = 0 # this will increment by 1 for each frame in the loop below
         self.image = self.frog_frames[self.current_frame] # displays the current sprite frame based on list element
         self.rect = self.image.get_rect()
